@@ -16,6 +16,9 @@ local.properties
 .settings/
 .loadpath
 res/*
+.idea/*
+*.gif
+
 
 # External tool builders
 .externalToolBuilders/
