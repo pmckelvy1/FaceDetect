@@ -10,7 +10,7 @@ from multiprocessing import Process
 
 import pyximport; pyximport.install()
 
-from cy.processor import threshold_fast, copy_vertical, melt
+from cy.processor import threshold_fast, copy_vertical, melt, copy_image
 
 
 class MelterFactory:
@@ -45,7 +45,7 @@ class MelterFactory:
 class Melter:
     def __init__(self, face, id):
         self.id = id
-        self.min_delta = 3
+        self.min_delta = 1
         print('creating melter: %s' % face)
         self.x = face[0]
         self.y = face[1]
@@ -72,11 +72,15 @@ class Melter:
         #     self.idelta = self.min_delta
         #     self.delta += 1
         self.cur_y += self.delta
-        if self.cur_y > self.h:
+        if self.cur_y > self.y + self.h:
             self.cur_y = self.y
             self.delta += 1
             print('%s | delta: %s , y: %s' % (self.id, self.delta, self.cur_y))
         if self.delta > self.h:
+            self.delta = self.min_delta
+            self.is_active = False
+            print('delta: %s , idelta: %s' % (self.delta, self.idelta))
+        if self.delta == 0:
             self.delta = self.min_delta
             self.is_active = False
             print('delta: %s , idelta: %s' % (self.delta, self.idelta))

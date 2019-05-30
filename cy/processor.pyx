@@ -1,3 +1,5 @@
+import numpy as np
+
 cpdef unsigned char[:, :, :] threshold_fast(int T, unsigned char[:, :, :] image):
     # set the variable extension types
     cdef int x, y, w, h
@@ -14,6 +16,10 @@ cpdef unsigned char[:, :, :] threshold_fast(int T, unsigned char[:, :, :] image)
 
     # return the thresholded image
     return image
+
+
+cpdef unsigned char[:, :, :] copy_image(unsigned char[:, :, :] image):
+    return np.copy(image)
 
 cpdef unsigned char[:, :, :] copy_vertical(unsigned char[:, :, :] image, int x, int y, int w, int h, int delta, int idelta):
     # set the variable extension types
