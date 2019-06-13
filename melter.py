@@ -10,12 +10,13 @@ from multiprocessing import Process
 
 import pyximport; pyximport.install()
 
-from cy.processor import threshold_fast, copy_vertical, melt, copy_image
+from cy.processor import threshold_fast, copy_vertical, melt, copy_image, colorize
 
 
 class MelterFactory:
     def __init__(self, image, filename, res_dirname):
-        self.melters = []
+        self.all_melters = []
+        self.active_melters = []
         self.filename = filename
         self.res_dirname = res_dirname
         self.step = 0
@@ -25,21 +26,30 @@ class MelterFactory:
     def create_melter(self, face):
         self.melter_id += 1
         m = Melter(face, str(self.melter_id))
-        self.melters.append(m)
+        self.all_melters.append(m)
+        self.active_melters.append(m)
 
     def full_melt(self):
         print('FULL MELT...')
-        print(self.melters)
-        while len(self.melters) > 0:
+        print(self.active_melters)
+        while len(self.active_melters) > 0:
             self.melt_step()
-            self.melters = [m for m in self.melters if m.is_active]
+            self.active_melters = [m for m in self.active_melters if m.is_active]
+        self.colorize(0)
+        self.colorize(128)
 
     def melt_step(self):
         self.step += 1
         melted_image = self.image
-        for melter in self.melters:
+        for melter in self.active_melters:
             melted_image = melter.melt(self.image)
         cv2.imwrite(self.res_dirname + '%s:glitch_%s' % (self.step + 1000000, self.filename), melted_image)
+
+    def colorize(self, color):
+        self.step += 1
+        for melter in self.all_melters:
+            self.image = melter.colorize(self.image, color=color)
+        cv2.imwrite(self.res_dirname + '%s:glitch_%s' % (self.step + 1000000, self.filename), self.image)
 
 
 class Melter:
@@ -55,6 +65,10 @@ class Melter:
         self.delta = self.min_delta
         self.idelta = self.min_delta
         self.is_active = True
+
+    def colorize(self, image, color=0):
+        colorize_image = colorize(image, self.x, self.y, self.w, self.h, color)
+        return np.array(colorize_image)
 
     def melt(self, image):
         if self.is_active:

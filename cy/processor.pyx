@@ -64,3 +64,18 @@ cpdef unsigned char[:, :, :] melt(unsigned char[:, :, :] image, int x, int y, in
 
     # return the thresholded image
     return image
+
+cpdef unsigned char[:, :, :] colorize(unsigned char[:, :, :] image, int x, int y, int w, int h, unsigned char color):
+    # set the variable extension types
+    cdef int i, j, k, img_w, img_h
+
+    # grab the image dimensions
+    img_h = image.shape[0]
+    img_w = image.shape[1]
+
+    for i in range(y, y + h):
+        for j in range(x, x + w):
+            image[i, j] = color
+
+    # return the thresholded image
+    return image
