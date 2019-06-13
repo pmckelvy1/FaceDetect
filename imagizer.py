@@ -11,8 +11,6 @@ from melter import MelterFactory, Melter
 
 import pyximport; pyximport.install()
 
-from cy.processor import threshold_fast, copy_vertical
-
 VALID_EXT = ['jpg', 'jpeg', 'png']
 
 
@@ -45,16 +43,18 @@ class Imagizer:
 
     @staticmethod
     def melt(image, faces, file_name, out_dir):
-        melter_factory = MelterFactory(image, file_name, out_dir)
-
+        # clean out dir
         shutil.rmtree(out_dir)
         if not os.path.exists(out_dir):
             os.mkdir(out_dir)
 
+        melter_factory = MelterFactory(image, file_name, out_dir)
         for face in faces:
             melter_factory.create_melter(face)
 
-        melter_factory.full_melt()
+        # melter_factory.full_melt()
+        # melter_factory.colorize(50)
+        melter_factory.full_static()
 
     @staticmethod
     def compress_image(file_path, file_name, qual=75, resize=True):

@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 cpdef unsigned char[:, :, :] threshold_fast(int T, unsigned char[:, :, :] image):
     # set the variable extension types
@@ -76,6 +77,30 @@ cpdef unsigned char[:, :, :] colorize(unsigned char[:, :, :] image, int x, int y
     for i in range(y, y + h):
         for j in range(x, x + w):
             image[i, j] = color
+
+    # return the thresholded image
+    return image
+
+cpdef unsigned char[:, :, :] static(unsigned char[:, :, :] image, int x, int y, int w, int h, int n, int coarse):
+    # set the variable extension types
+    cdef int i, j, k, x1, x2, y1, y2, img_w, img_h
+
+    # grab the image dimensions
+    img_h = image.shape[0]
+    img_w = image.shape[1]
+
+    for i in range(n):
+        x1 = random.randrange(x, x + w)
+        x2 = random.randrange(x, x + w)
+        y1 = random.randrange(y, y + h)
+        y2 = random.randrange(y, y + h)
+        for j in range(coarse):
+            if y1 + j >= y + h or y2 + j >= y + h:
+                break
+            for k in range(coarse):
+                if x1 + k >= x + w or x2 + k >= x + w:
+                    break
+                image[y1 + j, x1 + k] = image[y2 + j, x2 + k]
 
     # return the thresholded image
     return image
