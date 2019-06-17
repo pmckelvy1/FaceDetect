@@ -104,3 +104,13 @@ cpdef unsigned char[:, :, :] static(unsigned char[:, :, :] image, int x, int y, 
 
     # return the thresholded image
     return image
+
+cpdef unsigned char[:, :, :] apply_colored_faces(unsigned char[:, :, :] image, unsigned char[:, :, :] cimage, int x, int y, int w, int h):
+    # set the variable extension types
+    cdef int i, j, k, x1, x2, y1, y2, img_w, img_h
+
+    for i in range(y, y + h):
+        for j in range(x, x + w):
+            image[i, j] = cimage[i, j]
+
+    return image
