@@ -1,0 +1,78 @@
+import os
+from imutils import paths
+import shutil
+import moviepy.editor as mp
+from ffmpy import FFmpeg
+from constants import *
+
+
+class Videoizer:
+    def __init__(self, title, out_path='./vids/', frame_path='./frames/', audio_name='punkout_clip.wav', config_name='default', clean=False):
+        self.gif_path = './gifs/'
+        self.audio_path = './audio/'
+        self.audio_name = audio_name
+        self.frame_path = frame_path
+        self.out_path = out_path
+        self.title = title
+        self.gif_name = title + '.gif'
+        self.vid_name = title + '.mp4'
+        self.config = VIDEO_CONFIGS[config_name]
+        self.clean = clean
+
+    def cleanup(self):
+        shutil.rmtree(self.frame_path)
+        os.mkdir(self.frame_path)
+
+        shutil.rmtree(self.gif_path)
+        os.mkdir(self.gif_path)
+
+    def clean_dir(self):
+        if self.clean:
+            shutil.rmtree(self.out_path)
+        if not os.path.exists(self.out_path):
+            os.mkdir(self.out_path)
+
+    def videoize(self):
+        print('videoizing')
+        print('clean_dir')
+        self.clean_dir()
+        print('create_gif')
+        self.create_gif()
+        print('create_video')
+        self.create_video()
+        print('cleanups')
+        self.cleanup()
+
+    def create_gif(self):
+        # grab all image paths in the input directory
+        image_paths = sorted(list(paths.list_images(self.frame_path)))
+
+        # remove the last image path in the list
+        first_path = image_paths[0]
+        last_path = image_paths[-1]
+        # image_paths = [ip for i, ip in enumerate(image_paths[:-1]) if i % 10 == 0]
+        image_paths = image_paths[:-1]
+
+        # construct the image magick 'convert' command that will be used
+        # generate our output GIF, giving a larger delay to the final
+        # frame (if so desired)
+        cmd = "convert -delay {} {} -delay {} {} -delay {} {} -loop {} {}".format(
+            self.config[FIRST_DELAY], first_path,
+            self.config[FRAME_DELAY], " ".join(image_paths),
+            self.config[LAST_DELAY], last_path,
+            self.config[LOOP], self.gif_path + self.title + '.gif')
+        os.system(cmd)
+
+    def gif_to_video(self):
+        clip = mp.VideoFileClip(self.gif_path + self.gif_name)
+        clip.write_videofile(self.out_path + self.vid_name)
+
+    def create_video(self):
+        in_gif = self.gif_path + self.gif_name
+        in_audio = self.audio_path + self.audio_name
+        out_video = self.out_path + self.vid_name
+        ff = FFmpeg(
+            inputs={in_gif: None, in_audio: None},
+            outputs={out_video: '-movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2"'}
+        )
+        ff.run()

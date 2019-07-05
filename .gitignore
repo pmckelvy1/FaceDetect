@@ -16,8 +16,12 @@ local.properties
 .settings/
 .loadpath
 res/*
-.idea
+.idea/*
 *.gif
+audio/*
+pics/**/*
+vids/*
+colormap_samples/*
 
 
 # External tool builders

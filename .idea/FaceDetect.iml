@@ -2,8 +2,14 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/compressed" />
+      <excludeFolder url="file://$MODULE_DIR$/audio" />
+      <excludeFolder url="file://$MODULE_DIR$/colormap_samples" />
+      <excludeFolder url="file://$MODULE_DIR$/frames" />
+      <excludeFolder url="file://$MODULE_DIR$/gifs" />
+      <excludeFolder url="file://$MODULE_DIR$/pics" />
+      <excludeFolder url="file://$MODULE_DIR$/pics/compressed" />
       <excludeFolder url="file://$MODULE_DIR$/res" />
+      <excludeFolder url="file://$MODULE_DIR$/vids" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
