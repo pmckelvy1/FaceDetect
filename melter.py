@@ -4,6 +4,7 @@ import os
 import numpy as np
 from imutils import paths
 import shutil
+import cv2
 from PIL import Image
 import math
 from multiprocessing import Process
@@ -12,7 +13,7 @@ from utils import copy_image, print_image, show_image
 
 import pyximport; pyximport.install()
 
-from cy.processor import threshold_fast, copy_vertical, melt, cy_copy_image, colorize, static, apply_colored_faces, flip, static_virus
+from cy.processor import threshold_fast, copy_vertical, melt, cy_copy_image, colorize, static, apply_colored_faces, flip, static_virus, get_face_img
 
 
 class MeltMaster:
@@ -22,11 +23,43 @@ class MeltMaster:
         self.active_melters = []
         self.file_name = file_name
         self.out_path = out_path
+        self.step_base = 1000000
         self.step = 1000000
         self.image = image
         self.melter_id = 0
         self.print_image(self.image)
         self.frame_rate = frame_rate
+        self.start_codex = 0
+
+    def get_last_frame(self):
+        return self.out_path + self.img_name(self.step)
+
+    def get_next_frame(self):
+        self.step += 1
+        return self.out_path + self.img_name(self.step)
+
+    def melt_method(self, method, delay, *args, **kwargs):
+        self.record_codex()
+        if method == 'melt':
+            self.full_melt()
+        if method == 'static':
+            self.full_static(*args, **kwargs)
+        if method == 'flash':
+            self.full_face_color_glitch(**kwargs)
+        if method == 'flip':
+            self.flip(**kwargs)
+        if method == 'pause':
+            self.print_frames(**kwargs)
+        if method == 'zoom_face':
+            self.zoom_face()
+
+        return self.return_codex(delay)
+
+    def record_codex(self):
+        self.start_codex = self.step
+
+    def return_codex(self, delay):
+        return {'start': self.start_codex - self.step_base, 'end': self.step - self.step_base, 'delay': delay}
 
     def create_melter(self, face):
         self.melter_id += 1
@@ -39,6 +72,8 @@ class MeltMaster:
 
     def image_reset(self, image):
         self.image = image
+        self.start_codex = self.step
+        return self.return_codex(5)
 
     def reset_melters(self):
         print('resettting melters')
@@ -50,6 +85,11 @@ class MeltMaster:
 
     def print_image(self, img):
         print_image(self.out_path, self.img_name(self.step), img)
+
+    def print_frames(self, num_frames=10):
+        for i in range(num_frames):
+            self.step += 1
+            self.print_image(self.image)
 
     def full_melt(self):
         print('FULL MELT...')
@@ -74,7 +114,7 @@ class MeltMaster:
             self.image = melter.colorize(self.image, color=color)
         self.print_image(self.image)
 
-    def full_static(self, target_coarse, img_override=None, full_frame=False, reverse=False):
+    def full_static(self, target_coarse=1, img_override=None, full_frame=False, reverse=False):
         self.reset_melters()
         rev = 1
         self.print_image(self.image)
@@ -92,7 +132,7 @@ class MeltMaster:
         if reverse:
             self.step += target_coarse
 
-    def full_color_face_glitch(self, img_override=None):
+    def full_face_color_glitch(self, img_override=None, full_frame=False):
         img = self.image
         if img_override is not None:
             img = img_override
@@ -101,12 +141,16 @@ class MeltMaster:
         colored_image = img
         colored_image = cv2.applyColorMap(colored_image, COLORMAP_RAINBOW['value'])
         colored_image = np.array(colored_image)
-        colored_faces_image = self.apply_colored_faces(img, colored_image)
-        colored_faces_image = np.array(colored_faces_image)
-        self.step += 1
-        self.print_image(colored_faces_image)
+        if not full_frame:
+            colored_faces_image = self.apply_colored_faces(img, colored_image)
+            colored_faces_image = np.array(colored_faces_image)
+            self.step += 1
+            self.print_image(colored_faces_image)
+        else:
+            self.step += 1
+            self.print_image(colored_image)
 
-        for i in range(2, 100):
+        for i in range(2, 120):
             self.step += 1
             copy_from = self.img_name(self.step - 2)
             copy_to = self.img_name(self.step)
@@ -118,11 +162,18 @@ class MeltMaster:
             mixed_image = melter.apply_face_mask(self.image, colored_image)
         return mixed_image
 
-    def flip(self, horizontal):
+    def flip(self, horizontal=0):
         rot_image = self.image
         for melter in self.all_melters:
-            rot_image = melter.flip(rot_image, 1)
+            print(' master horiz: %s' % horizontal)
+            rot_image = melter.flip(rot_image, horizontal)
         self.print_image(rot_image)
+
+    def zoom_face(self):
+        for m in self.active_melters:
+            m.zoom_face(self.get_last_frame(), self.get_next_frame())
+            show_image(self.image)
+            self.print_image(self.image)
 
 
 class Melter:
@@ -199,7 +250,28 @@ class Melter:
         if self.is_active:
             img = image
             img2 = image.copy()
+            print('horizontal %s' % horizontal)
             img = flip(img, self.x, self.y, self.w, self.h, horizontal, img2)
             img = np.array(img)
             return img
         return image
+
+    def zoom_face(self, img_path, new_img_path):
+        img = cv2.imread(img_path)
+        face_img = self.cut_out_face(img)
+        print_image(new_img_path, '', face_img)
+        foo = Image.open(new_img_path)
+        # need to resize face image here
+        multiplier = 1
+        while (self.x + self.w) * multiplier < 300 and (self.y + self.h) * multiplier < 300:
+            multiplier += 1
+        print('multiplier %s' % multiplier)
+        foo = foo.resize((int(foo.size[0] * multiplier), int(foo.size[1] * multiplier)))
+        # foo.thumbnail((foo.size[0] / 4, foo.size[1] / 4), Image.ANTIALIAS)
+        foo.save(new_img_path, optimize=True, quality=100)
+        return new_img_path
+
+    def cut_out_face(self, image):
+        img2 = self.colorize(image.copy(), 0)
+        face_img = get_face_img(image, self.x, self.y, self.w, self.h, img2)
+        return np.array(face_img)

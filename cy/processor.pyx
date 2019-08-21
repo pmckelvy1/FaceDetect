@@ -150,6 +150,22 @@ cpdef unsigned char[:, :, :] static_virus(unsigned char[:, :, :] image, int x, i
     return image
 
 
+cpdef unsigned char[:, :, :] get_face_img(unsigned char[:, :, :] image, int x, int y, int w, int h, unsigned char[:, :, :] face_img):
+    # set the variable extension types
+    cdef int i, j, k, x1, x2, y1, y2, img_w, img_h
+
+    # grab the image dimensions
+    img_h = image.shape[0]
+    img_w = image.shape[1]
+
+    for i in range(y, y + h):
+        for j in range(x, x + w):
+            face_img[y - i, x - j] = image[i, j]
+
+    # return the thresholded image
+    return face_img
+
+
 cpdef unsigned char[:, :, :] flip(unsigned char[:, :, :] image, int x, int y, int w, int h, int horizontal, unsigned char[:, :, :] flip_to):
     # set the variable extension types
     cdef int i, j, k, img_w, img_h

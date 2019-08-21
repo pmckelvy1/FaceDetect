@@ -1,15 +1,16 @@
 import cv2
 import os
 import shutil
-from PIL import Image
+from PIL import Image, ImageFont, ImageDraw
 from melter import MeltMaster
 from constants import *
 from utils import print_image
+import numpy as np
 
 
 class Imagizer:
     def __init__(self):
-        casc_path = "haarcascade_frontalface_default.xml"
+        casc_path = os.path.dirname(os.path.realpath(__file__)) + "/haarcascade_frontalface_default.xml"
         self.face_cascade = cv2.CascadeClassifier(casc_path)
         self.img_path = None
         self.img_name = None
@@ -27,7 +28,6 @@ class Imagizer:
         self.img_path = img_path
         self.img_name = img_name
         self.compress = compress
-
         self.reload_image()
 
     def reload_image(self):
@@ -36,24 +36,29 @@ class Imagizer:
         self.original_image = cv2.imread(self.img_path + self.img_name)
         self.image = cv2.imread(self.img_path + self.img_name)
         if self.melt_master:
-            self.melt_master.image_reset(self.image)
+            return self.melt_master.image_reset(self.image)
 
     def detect_faces(self):
-        faces = self.face_cascade.detectMultiScale(
-            self.image,
-            scaleFactor=1.1,
-            minNeighbors=5,
-            minSize=(30, 30)
-            # flags = cv2.CV_HAAR_SCALE_IMAGE
-        )
+        try:
+            faces = self.face_cascade.detectMultiScale(
+                self.image,
+                scaleFactor=1.1,
+                minNeighbors=5,
+                minSize=(30, 30)
+                # flags = cv2.CV_HAAR_SCALE_IMAGE
+            )
 
-        print("{0} :: Found {1} faces!".format(self.img_name, len(faces)))
-
-        return faces
+            print("{0} :: Found {1} faces!".format(self.img_name, len(faces)))
+            return faces
+        except Exception as e:
+            print('woops detect_faces: %s' % self.img_path + self.img_name)
+            print(e)
+            raise
 
     def get_num_faces(self, file_path, file_name):
         self.load_image(file_path, file_name)
         faces = self.detect_faces()
+        self.show_image(self.image)
         return len(faces)
 
     def create_melters(self):
@@ -67,24 +72,56 @@ class Imagizer:
 
     def face_melt(self):
         print('applying melt')
-        self.melt_master.set_frame_rate(10)
-        self.melt_master.full_melt()
+        self.melt_master.set_frame_rate(2)
+        return self.melt_master.melt_method('melt', 1)
 
-    def face_static(self, frame_rate, override=False, full_frame=False, reverse=False):
+    def pause(self, num_frames=10):
+        print('applying pause')
+        return self.melt_master.melt_method('pause', 100, num_frames=num_frames)
+
+    def face_static(self, frame_rate, override=False, full_frame=False, reverse=False, num_frames=130):
         print('applying static')
         self.melt_master.set_frame_rate(frame_rate)
         if override:
-            self.melt_master.full_static(130, img_override=self.original_image, full_frame=full_frame, reverse=reverse)
+            return self.melt_master.melt_method('static', 1, target_coarse=num_frames, img_override=self.original_image, full_frame=full_frame, reverse=reverse)
         else:
-            self.melt_master.full_static(150, full_frame=full_frame, reverse=reverse)
+            return self.melt_master.melt_method('static', 1, target_coarse=num_frames, full_frame=full_frame, reverse=reverse)
 
     def face_flash(self):
-        print('applying color glitch')
+        print('applying face color glitch')
         self.melt_master.set_frame_rate(1)
-        self.melt_master.full_color_face_glitch()
+        return self.melt_master.melt_method('flash', 1)
+
+    def full_flash(self):
+        print('applying full color glitch')
+        self.melt_master.set_frame_rate(1)
+        return self.melt_master.melt_method('flash', 1, full_frame=True)
 
     def face_flip(self):
-        self.melt_master.flip(1)
+        return self.melt_master.melt_method('flip', 1, horizontal=1)
+
+    def zoom_face(self):
+        gif_codex = self.melt_master.melt_method('zoom_face', 1)
+        # self.show_image(self.image)
+        return gif_codex
+
+    def add_text(self):
+        org = (int(self.image.shape[0]/8), int(2 * self.image.shape[1]/3))
+        print(org)
+        top_left = org
+        bottom_right = (org[0] + 220, org[1] + 20)
+        img_name = self.melt_master.get_last_frame()
+        img = Image.open(img_name)
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype("./fonts/Courier-BoldRegular.ttf", 20)
+        draw.rectangle((top_left, bottom_right), fill=0, width=100)
+        draw.text(org, "the technocratic", font=font)
+        img.save(self.melt_master.get_next_frame())
+        img = np.array(img)
+        # self.show_image(img)
+        return self.melt_master.image_reset(img)
+
+        # cv2.addText(self.original_image, "the technocratic", org, cv2.FONT_HERSHEY_DUPLEX)
 
     def full_loop(self):
         print(os.curdir)
