@@ -17,7 +17,7 @@ from cy.processor import threshold_fast, copy_vertical, melt, cy_copy_image, col
 
 
 class MeltMaster:
-    def __init__(self, image, file_name, out_path, frame_rate):
+    def __init__(self, image, file_name, out_path, frame_rate, inverse_frame_rate=False):
         self.melt_type = 'melt'
         self.all_melters = []
         self.active_melters = []
@@ -29,6 +29,7 @@ class MeltMaster:
         self.melter_id = 0
         self.print_image(self.image)
         self.frame_rate = frame_rate
+        self.inverse_frame_rate = inverse_frame_rate
         self.start_codex = 0
 
     def get_last_frame(self):
@@ -67,8 +68,10 @@ class MeltMaster:
         self.all_melters.append(m)
         self.active_melters.append(m)
 
-    def set_frame_rate(self, frame_rate):
-        self.frame_rate = frame_rate
+    def set_frame_rate(self, frame_rate, inverse_frame_rate):
+        print('setting frame rate %s' % frame_rate)
+        self.frame_rate = frame_rate,
+        self.inverse_frame_rate = inverse_frame_rate
 
     def image_reset(self, image):
         self.image = image
@@ -94,9 +97,11 @@ class MeltMaster:
     def full_melt(self):
         print('FULL MELT...')
         print(self.active_melters)
+        print('start step %s' % self.step)
         while len(self.active_melters) > 0:
             self.melt_step()
             self.active_melters = [m for m in self.active_melters if m.is_active]
+        print('end step %s' % self.step)
         self.colorize(0)
         # self.colorize(128)
 
@@ -105,8 +110,11 @@ class MeltMaster:
         melted_image = self.image
         for melter in self.active_melters:
             melted_image = melter.melt(self.image)
-        if self.step % self.frame_rate == 0:
+        if (self.step % self.frame_rate[0] == 0) != self.inverse_frame_rate:
+            print('printing')
             self.print_image(melted_image)
+        else:
+            print('not printing')
 
     def colorize(self, color):
         self.step += 1
@@ -172,7 +180,7 @@ class MeltMaster:
     def zoom_face(self):
         for m in self.active_melters:
             m.zoom_face(self.get_last_frame(), self.get_next_frame())
-            show_image(self.image)
+            # show_image(self.image)
             self.print_image(self.image)
 
 

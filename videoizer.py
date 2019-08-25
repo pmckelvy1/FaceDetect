@@ -7,9 +7,20 @@ from constants import *
 
 
 class Videoizer:
-    def __init__(self, title, gif_codex=None, out_path='./vids/', frame_path='./frames/', audio_name='punkout_clip.wav', config_name='default', clean=False):
-        self.gif_path = './gifs/'
-        self.audio_path = './audio/'
+    def __init__(
+            self,
+            title,
+            gif_codex=None,
+            out_path=os.path.dirname(os.path.realpath(__file__))+'/vids/',
+            frame_path= os.path.dirname(os.path.realpath(__file__))+'/frames/',
+            gif_path=os.path.dirname(os.path.realpath(__file__)) + '/gifs/',
+            audio_path=os.path.dirname(os.path.realpath(__file__)) + '/audio/',
+            audio_name='punkout_clip.wav',
+            config_name='default',
+            clean=False
+    ):
+        self.gif_path = gif_path
+        self.audio_path = audio_path
         self.audio_name = audio_name
         self.frame_path = frame_path
         self.out_path = out_path

@@ -32,6 +32,7 @@ class Sequencer:
         self.entropy_level = 2
         self.init_frame()
         print(self.valid_frames)
+        self.switch_frame = ['fo', '_', 'fo', '_', 'fo', '-', '0', '_', '0', '_', '0']
 
     def set_valid_frames(self):
         self.valid_frames = {}
@@ -60,7 +61,7 @@ class Sequencer:
     def generate_frame(self):
         max = 6
         min = 0
-        if self.cur_frame == ['fo', '_', 'fo', '_', 'fo', '-', '0', '_', '0', '_', '0']:
+        if self.cur_frame == self.switch_frame:
             max = 100
             min = 6
         temp_codex_bits = [i for i in range(len(self.frame_codex)) if i % 2 == 0 and i < max and i >= min]
@@ -89,23 +90,23 @@ class Sequencer:
         self.cur_frame = new_frame
 
 
-if __name__ == '__main__':
-    codex = [
-        ['0', 'fo', 'ho', 'fc', 'hc'],
-        ['_'],
-        ['0', 'fo', 'ho', 'fc', 'hc'],
-        ['_'],
-        ['0', 'fo', 'ho', 'fc', 'hc'],
-        ['-'],
-        ['0', 'a', 's', 'p'],
-        ['_'],
-        ['0', 'a', 's', 'p'],
-        ['_'],
-        ['0'],
-        ['.png']
-    ]
-    seq = Sequencer(codex, './seq_test')
-    gif_seq = seq.gen_sequence()
-    vidz = Videoizer('seq_test', clean=True, config_name='full', gif_codex=None)
-    vidz.create_gif_from_sequence('./seq_test', gif_seq)
-    print('done')
+# if __name__ == '__main__':
+#     codex = [
+#         ['0', 'fo', 'ho', 'fc', 'hc'],
+#         ['_'],
+#         ['0', 'fo', 'ho', 'fc', 'hc'],
+#         ['_'],
+#         ['0', 'fo', 'ho', 'fc', 'hc'],
+#         ['-'],
+#         ['0', 'a', 's', 'p'],
+#         ['_'],
+#         ['0', 'a', 's', 'p'],
+#         ['_'],
+#         ['0'],
+#         ['.png']
+#     ]
+#     seq = Sequencer(codex, './seq_test')
+#     gif_seq = seq.gen_sequence()
+#     vidz = Videoizer('seq_test', clean=True, config_name='full', gif_codex=None)
+#     vidz.create_gif_from_sequence('./seq_test', gif_seq)
+#     print('done')
