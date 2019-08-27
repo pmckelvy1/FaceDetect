@@ -118,6 +118,10 @@ class Imagizer:
         # self.show_image(self.image)
         return gif_codex
 
+    def shake_face(self, num_shakes=0):
+        gif_codex = self.melt_master.melt_method('shake', 1, num_shakes=num_shakes)
+        return gif_codex
+
     def add_text(self):
         org = (int(self.image.shape[0]/10), int(2 * self.image.shape[1]/3))
         print(org)
