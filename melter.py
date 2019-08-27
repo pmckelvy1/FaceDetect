@@ -325,6 +325,12 @@ class Melter:
     def shake(self, image):
         angle = random.randrange(-10, 10, 1)
         rotated = imutils.rotate(image, angle)
+        rows, cols, _ = image.shape
+
+        randx = random.randrange(-10, 10, 1)
+        randy = random.randrange(-10, 10, 1)
+        M = np.float32([[1, 0, randx], [0, 1, randy]])
+        dst = cv2.warpAffine(rotated, M, (cols, rows))
         # cv2.imshow("Rotated (Problematic)", rotated)
         # cv2.waitKey(0)
-        return rotated
+        return dst

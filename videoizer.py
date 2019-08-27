@@ -106,9 +106,7 @@ class Videoizer:
     def create_video(self):
         in_gif = self.gif_path + self.gif_name
         in_audio = self.audio_path + self.audio_name
-        for filename in os.listdir(self.out_path):
-            if filename == self.vid_name:
-                continue
+        # TODO check if video name exists, if so, version bump
         out_video = self.out_path + self.vid_name
         ff = FFmpeg(
             inputs={in_gif: None, in_audio: None},

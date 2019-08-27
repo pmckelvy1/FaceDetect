@@ -83,7 +83,7 @@ class Imagizer:
         for face in self.faces:
             if face[3] > max_height:
                 max_height = face[3]
-        rate = math.ceil(max_height/55)
+        rate = math.ceil(max_height/40)
         # rate = 3
         self.melt_master.set_frame_rate(rate, False)
         return self.melt_master.melt_method('melt', 1)
@@ -123,7 +123,7 @@ class Imagizer:
         return gif_codex
 
     def add_text(self):
-        org = (int(self.image.shape[0]/10), int(2 * self.image.shape[1]/3))
+        org = (int(self.image.shape[1]/6), int(8 * self.image.shape[0]/10))
         print(org)
         top_left = org
         bottom_right = (org[0] + 220, org[1] + 20)
