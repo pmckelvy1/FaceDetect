@@ -65,7 +65,7 @@ class Imagizer:
     def get_num_faces(self, file_path, file_name):
         self.load_image(file_path, file_name)
         self.faces = self.detect_faces()
-        self.show_image(self.image)
+        # self.show_image(self.image)
         return len(self.faces)
 
     def create_melters(self):
@@ -165,10 +165,8 @@ class Imagizer:
     def compress_image(file_path, file_name, qual=50, resize=True):
 
         if file_path.endswith(file_name):
-            print('here')
             foo = Image.open(file_path)
         else:
-            print('there')
             foo = Image.open(file_path + file_name)
         new_file_name = 'comp_' + str(qual) + file_name
         if resize:
