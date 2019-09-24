@@ -2,30 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d320ec4-69b9-432b-a108-7efb01529bc2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/audio/punkout_clip.aif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sandbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FaceDetect.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FaceDetect.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abba.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/abba_face_detected.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pics/abba_face_detected.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compressed/comp_35Final_414_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pics/compressed/comp_35Final_414_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compressed/comp_35abba.png" beforeDir="false" afterPath="$PROJECT_DIR$/pics/compressed/comp_35abba.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compressed/comp_50abba.png" beforeDir="false" afterPath="$PROJECT_DIR$/pics/compressed/comp_50abba.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compressed/comp_75abba.png" beforeDir="false" afterPath="$PROJECT_DIR$/pics/compressed/comp_75abba.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compressed/comp_95abba.png" beforeDir="false" afterPath="$PROJECT_DIR$/pics/compressed/comp_95abba.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cy/processor.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/cy/processor.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imagizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/imagizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/little_mix_right.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pics/little_mix_right.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/little_mix_wrong.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pics/little_mix_wrong.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/melter.py" beforeDir="false" afterPath="$PROJECT_DIR$/melter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/something.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testgif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_saturdays_right.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pics/the_saturdays_right.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/the_saturdays_wrong.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pics/the_saturdays_wrong.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/Final_414_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/Final_414_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/IMG_8801.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/abba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/abba_face_detected.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/binanceproof.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/compressed/comp_35Final_414_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/compressed/comp_35abba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/compressed/comp_50abba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/compressed/comp_75abba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/compressed/comp_95abba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/little_mix_right.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/little_mix_wrong.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/pmckelvy headshot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/the_saturdays_right.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pics/the_saturdays_wrong.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sequencer.py" beforeDir="false" afterPath="$PROJECT_DIR$/sequencer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoizer.py" afterDir="false" />
     </list>
     <ignored path="FaceDetect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,83 +41,7 @@
     <favorites_list name="FaceDetect" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imagizer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cy/processor.pyx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="135" column="22" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/videoizer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/melter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-856">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sandbox.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -129,36 +52,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>np</find>
-      <find>testgif</find>
-      <find>./res</find>
-      <find>self.print_image</find>
-      <find>generate_face_flash</find>
-      <find>create_gif</find>
-      <find>apply_colored_faces</find>
-      <find>self.melt_type</find>
-      <find>copy_image</find>
-      <find>self.step</find>
-      <find>img_name</find>
-      <find>face_flash</find>
+      <find>color</find>
+      <find>colorize</find>
+      <find>self.image =</find>
+      <find>cv2</find>
+      <find>self.gif_codex</find>
       <find>load_image</find>
+      <find>multiplier</find>
+      <find>zoom_face</find>
+      <find>add_text</find>
+      <find>mul</find>
+      <find>frame_rate</find>
+      <find>MeltMaster</find>
+      <find>self.frame_rate</find>
+      <find>self.clean</find>
+      <find>set_frame_rate</find>
+      <find>detect_faces</find>
+      <find>not print</find>
+      <find>self.print_image</find>
+      <find>zoom_fac</find>
+      <find>'there'</find>
+      <find>show_image</find>
+      <find>checking media</find>
+      <find>$USER_HOME$/</find>
+      <find>self.frame_path</find>
+      <find>self.compress</find>
+      <find>resett</find>
+      <find>reset_melters</find>
       <find>compress_image</find>
-      <find>fast_me</find>
-      <find>melter.flip</find>
-      <find>static</find>
-      <find>applying stati</find>
-      <find>show</find>
-      <find>overridin</find>
-      <find>not viral</find>
-      <find>self.coar</find>
-      <find>quite</find>
-      <find>flip</find>
-      <find>full_static</find>
-      <find>num_swaps</find>
-      <find>num_</find>
-      <find>bool</find>
-      <find>face_static</find>
-      <find>size</find>
+      <find>create_video</find>
+      <find>self.vid_name</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,27 +93,40 @@
         <option value="$PROJECT_DIR$/cy/setup.py" />
         <option value="$PROJECT_DIR$/detector.py" />
         <option value="$PROJECT_DIR$/face_detect_cv3.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/videoizer.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/cy/processor.pyx" />
         <option value="$PROJECT_DIR$/constants.py" />
-        <option value="$PROJECT_DIR$/sandbox.py" />
+        <option value="$PROJECT_DIR$/cy/processor.pyx" />
+        <option value="$PROJECT_DIR$/__init__.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/melter.py" />
         <option value="$PROJECT_DIR$/imagizer.py" />
+        <option value="$PROJECT_DIR$/videoizer.py" />
+        <option value="$PROJECT_DIR$/sandbox.py" />
+        <option value="$PROJECT_DIR$/sequencer.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
+    <option name="width" value="1882" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FaceDetect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FaceDetect" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Default'; set:Default; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -202,28 +138,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FaceDetect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FaceDetect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FaceDetect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FaceDetect" type="462c0819:PsiDirectoryNode" />
-              <item name="cy" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/audio" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -231,9 +151,10 @@
       <recent name="$PROJECT_DIR$/pics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fonts" />
+      <recent name="$PROJECT_DIR$/cy" />
       <recent name="$PROJECT_DIR$/pics" />
       <recent name="$PROJECT_DIR$/gifs" />
-      <recent name="$PROJECT_DIR$/cy" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -331,10 +252,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="seq test" type="PythonConfigurationType" factoryName="Python">
+      <module name="FaceDetect" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/bin/python3.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sequencer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.face_detect_test" />
       <item itemvalue="Python.imagize" />
       <item itemvalue="Python.sandbox" />
+      <item itemvalue="Python.seq test" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -351,46 +294,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.2446386" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.14691943" />
       <window_info id="Structure" order="1" weight="0.2494043" />
       <window_info id="Favorites" order="2" sideWeight="0.5007299" side_tool="true" weight="0.2494043" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27445257" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39854014" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.4379562" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.42590675" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.329927" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15036497" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.48759124" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -401,163 +325,160 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frames/1000440:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000441:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000426:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000416:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000313:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000307:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000293:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000308:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000310:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000324:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000344:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000352:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000366:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000377:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000240:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000387:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000388:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000389:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000390:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000391:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000392:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000393:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000394:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000395:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000396:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000397:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000398:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000399:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000400:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000401:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000402:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000403:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000368:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000425:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000471:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000511:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000544:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000570:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000596:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000643:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000405:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/1000404:melt_comp_30billie_cry.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/frames/1000344:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000352:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000366:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000377:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000240:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000387:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000388:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000389:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000390:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000391:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000392:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000393:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000394:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000395:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000396:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000397:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000398:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000399:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000400:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000401:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000402:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000403:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000368:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000425:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000471:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000511:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000544:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000570:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000596:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000643:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000405:melt_comp_30billie_cry.jpeg" />
+    <entry file="file://$PROJECT_DIR$/frames/1000404:melt_comp_30billie_cry.jpeg" />
     <entry file="file://$PROJECT_DIR$/pics/abba_face_detected.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pics/abba.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2019.1/python_stubs/500451120/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5149" column="8" selection-start-line="5149" selection-start-column="8" selection-end-line="5149" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2019.1/python_stubs/500451120/cv2/cv2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="2310" column="4" selection-start-line="2310" selection-start-column="4" selection-end-line="2310" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/PIL/ImageDraw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="261" column="8" selection-start-line="261" selection-start-column="8" selection-end-line="261" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/cv2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
+        <state relative-caret-position="525">
           <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="204" selection-start-line="204" selection-end-line="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/imutils/convenience.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cy/processor.pyx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="135" column="22" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
+        <state relative-caret-position="499">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="910">
+          <caret line="224" column="5" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequencer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="88" column="78" selection-start-line="88" selection-start-column="78" selection-end-line="88" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sandbox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="14" />
+        <state>
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/melter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-856">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="888">
+          <caret line="100" column="24" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -566,30 +487,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imagizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="888">
+          <caret line="155" column="41" selection-start-line="155" selection-start-column="41" selection-end-line="155" selection-end-column="41" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sandbox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -88,7 +88,7 @@ class MeltMaster:
             m.reset()
 
     def img_name(self, num):
-        return '%s:%s_%s' % (str(num), self.melt_type, self.file_name)
+        return '%s-%s_%s' % (str(num), self.melt_type, self.file_name)
 
     def print_image(self, img):
         print_image(self.out_path, self.img_name(self.step), img)

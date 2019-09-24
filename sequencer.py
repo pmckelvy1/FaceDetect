@@ -32,7 +32,8 @@ class Sequencer:
         self.entropy_level = 2
         self.init_frame()
         print(self.valid_frames)
-        self.switch_frame = ['fo', '_', 'fo', '_', 'fo', '-', '0', '_', '0', '_', '0']
+        self.switch_frame = ['fo', '_', 'fo', '_', 'fo', '-', '0', '_', '0', '_', '0', '.png']
+        self.switched = False
 
     def set_valid_frames(self):
         self.valid_frames = {}
@@ -61,9 +62,17 @@ class Sequencer:
     def generate_frame(self):
         max = 6
         min = 0
-        if self.cur_frame == self.switch_frame:
+        if self.switched:
             max = 100
             min = 6
+        if self.cur_frame == self.switch_frame:
+            if not self.switched:
+                max = 100
+                min = 6
+                self.switched = True
+            else:
+                self.switched = False
+
         temp_codex_bits = [i for i in range(len(self.frame_codex)) if i % 2 == 0 and i < max and i >= min]
         bits_to_change = []
         for l in range(self.entropy_level):

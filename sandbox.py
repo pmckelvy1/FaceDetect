@@ -4,13 +4,20 @@ from sequencer import Sequencer
 import os
 
 
-def videosize():
+def multi_videosize():
+    for q in [50, 60, 70, 80, 90, 100]:
+        videosize(q)
+
+
+def videosize(q):
     imgz = Imagizer()
-    # imgz.init('./pics/', 'billie_cry.jpeg', './frames/')
+    imgz.init('./pics/', 'billie_cry.jpeg', './frames/', qual=q)
     # imgz.init('./pics/', 'abba.png', './frames/')
-    # frame_path = './frames/'
-    frame_path = '/Users/patrickmckelvy/technocracy/frames/'
-    imgz.init('/Users/patrickmckelvy/technocracy/instapics/', '2115817698241053766.jpg', frame_path)
+    frame_path = './frames/'
+    out_path = './vids/'
+    # frame_path = '/Users/patrickmckelvy/technocracy/frames/'
+    # out_path = '/Users/patrickmckelvy/technocracy/vids/'
+    # imgz.init('/Users/patrickmckelvy/technocracy/instapics/', '2115817698241053766.jpg', frame_path)
     #
     gif_codex = []
     gif_codex.append(imgz.face_static(1, reverse=True, full_frame=True, num_frames=150))
@@ -30,7 +37,7 @@ def videosize():
     gif_codex.append(imgz.face_flash())
     gif_codex.append(imgz.full_flash())
     clean=False
-    vidz = Videoizer('test', frame_path=frame_path, out_path='/Users/patrickmckelvy/technocracy/vids/', clean=clean, config_name='full', gif_codex=None)
+    vidz = Videoizer(str(q) + 'test', frame_path=frame_path, out_path=out_path, clean=clean, config_name='full', gif_codex=None)
     vidz.videoize()
 
 
@@ -71,6 +78,7 @@ def collect_faces(dir):
 
 
 if __name__ == '__main__':
-    videosize()
-    # face_sequence()
+    # videosize()
+    # multi_videosize()
+    face_sequence()
     # collect_faces('./seq_test/')

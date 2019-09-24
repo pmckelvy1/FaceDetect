@@ -6,6 +6,10 @@ from ffmpy import FFmpeg
 from constants import *
 import cv2
 import numpy as np
+import subprocess as sp
+import sys
+
+from ffmpeg_progress import start
 
 
 class Videoizer:
@@ -19,12 +23,13 @@ class Videoizer:
             audio_path=os.path.dirname(os.path.realpath(__file__)) + '/audio/',
             audio_name='punkout_clip.wav',
             config_name='default',
-            clean=False
+            clean=False,
+            media_id=''
     ):
         self.gif_path = gif_path
         self.audio_path = audio_path
         self.audio_name = audio_name
-        self.frame_path = frame_path
+        self.frame_path = frame_path + media_id + '/'
         self.out_path = out_path
         self.title = title
         self.gif_name = title + '.gif'
@@ -53,9 +58,10 @@ class Videoizer:
         print('create_gif')
         self.create_gif()
         print('create_video')
-        self.create_video()
+        out_path, vid_name = self.create_video()
         print('cleanups')
         self.cleanup()
+        return out_path, vid_name
 
     def create_gif(self):
         # grab all image paths in the input directory
@@ -68,7 +74,8 @@ class Videoizer:
         image_paths = image_paths[:-1]
 
         first_img = image_paths[0]
-        first_img_pieces = first_img.split(':')
+        print('first_img %s ' % first_img)
+        first_img_pieces = first_img.split('-')
         frame_name = first_img_pieces[1]
         print(self.gif_codex)
 
@@ -106,6 +113,7 @@ class Videoizer:
         clip.write_videofile(self.out_path + self.vid_name)
 
     def create_video(self):
+        # def create():
         in_gif = self.gif_path + self.gif_name
         in_audio = self.audio_path + self.audio_name
         # TODO check if video name exists, if so, version bump
@@ -114,7 +122,15 @@ class Videoizer:
             inputs={in_gif: None, in_audio: None},
             outputs={out_video: '-movflags faststart -t 28 -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2"'}
         )
-        ff.run()
+        ff.run(stdout=sp.PIPE)
+        return self.out_path, self.vid_name
+
+        # start('my input file.mov',
+        #       out_video,
+        #       ffmpeg_callback,
+        #       on_message=on_message_handler,
+        #       on_done=on_done_handler,
+        #       wait_time=1)  # seconds
 
     def play_video(self, video_file):
         # Create a VideoCapture object and read from input file
@@ -147,3 +163,22 @@ class Videoizer:
 
         # Closes all the frames
         cv2.destroyAllWindows()
+
+    # def ffmpeg_callback(infile: str, outfile: str, vstats_path: str):
+    #     p = sp.Popen(['ffmpeg',
+    #                   '-y',
+    #                   '-vstats_file', vstats_path,
+    #                   '-i', infile,
+    #                   outfile], stdout=sp.PIPE, stderr=sp.PIPE)
+    #     return p.pid
+    #
+    # def on_message_handler(percent: float,
+    #                        fr_cnt: int,
+    #                        total_frames: int,
+    #                        elapsed: float):
+    #     sys.stdout.write('\r{:.2f}%'.format(percent))
+    #     sys.stdout.flush()
+    #
+    # def on_done_handler():
+    #     print('')
+
